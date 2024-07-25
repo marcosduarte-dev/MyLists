@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Table(name = "usuarios")
 public class Usuarios implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
@@ -21,4 +21,6 @@ public class Usuarios implements Serializable {
     private String email;
 
     private String senha;
+
+    private String status;
 }

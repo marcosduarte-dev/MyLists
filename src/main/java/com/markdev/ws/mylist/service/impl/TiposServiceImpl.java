@@ -37,6 +37,8 @@ public class TiposServiceImpl implements TiposService {
             throw new BadRequestException("ID deve ser nulo");
         }
 
+        dto.setStatus("Ativo");
+
         return tiposRepository.save(TiposMapper.fromDtoToEntity(dto));
     }
 
@@ -52,6 +54,19 @@ public class TiposServiceImpl implements TiposService {
         getTipos(id);
 
         tiposRepository.deleteById(id);
+    }
+
+    @Override
+    public Tipos toggleStatus(Long id) {
+        Tipos tipo = getTipos(id);
+
+        if(tipo.getStatus().equals("Ativo")) {
+            tipo.setStatus("Inativo");
+        } else {
+            tipo.setStatus("Ativo");
+        }
+
+        return tiposRepository.save(tipo);
     }
 
 

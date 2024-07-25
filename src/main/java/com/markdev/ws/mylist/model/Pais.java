@@ -13,10 +13,12 @@ import java.io.Serializable;
 @Table(name = "pais")
 public class Pais implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
 
     private String sigla;
+
+    private String status;
 }

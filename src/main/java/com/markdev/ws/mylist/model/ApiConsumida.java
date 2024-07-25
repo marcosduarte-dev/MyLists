@@ -11,10 +11,12 @@ import lombok.*;
 @Table(name = "tipos")
 public class ApiConsumida {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String api;
 
     private String url;
+
+    private String status;
 }
