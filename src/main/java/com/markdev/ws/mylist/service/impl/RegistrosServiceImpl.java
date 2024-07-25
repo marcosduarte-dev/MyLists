@@ -78,6 +78,19 @@ public class RegistrosServiceImpl implements RegistrosService {
         registrosRepository.deleteById(id);
     }
 
+    @Override
+    public Registros toggleStatus(Long id) {
+        Registros registros = getRegistros(id);
+
+        if(registros.getStatus_ativo().equals("Ativo")) {
+            registros.setStatus_ativo("Inativo");
+        } else {
+            registros.setStatus_ativo("Ativo");
+        }
+
+        return registrosRepository.save(registros);
+    }
+
 
     private Registros getRegistros(Long id) {
         Optional<Registros> optional = registrosRepository.findById(id);

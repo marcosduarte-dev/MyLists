@@ -17,4 +17,5 @@ public interface TiposService {
 
     void delete(Long id);
 
+    Tipos toggleStatus(Long id);
 }

@@ -19,4 +19,5 @@ public interface RegistrosService {
 
     void delete(Long id);
 
+    Registros toggleStatus(Long id);
 }

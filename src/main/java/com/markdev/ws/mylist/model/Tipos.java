@@ -11,8 +11,10 @@ import lombok.*;
 @Table(name = "tipos")
 public class Tipos {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String tipo;
+
+    private String status = "Ativo";
 }

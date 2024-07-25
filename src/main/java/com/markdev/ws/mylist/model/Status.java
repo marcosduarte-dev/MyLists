@@ -13,8 +13,11 @@ import java.io.Serializable;
 @Table(name = "status")
 public class Status implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String status;
+
+    @Column(name = "status_ativo")
+    private String statusAtivo;
 }

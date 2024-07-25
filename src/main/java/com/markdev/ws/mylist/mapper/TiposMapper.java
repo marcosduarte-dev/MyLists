@@ -9,6 +9,7 @@ public class TiposMapper {
         return Tipos.builder()
                 .id(dto.getId())
                 .tipo(dto.getTipo())
+                .status(dto.getStatus())
                 .build();
     }
 

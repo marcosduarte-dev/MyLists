@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Table(name = "registros")
 public class Registros implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -63,4 +63,7 @@ public class Registros implements Serializable {
 
     @Column(name = "data_registro")
     private LocalDate dataRegistro;
+
+    @Column(name = "status")
+    private String status_ativo;
 }

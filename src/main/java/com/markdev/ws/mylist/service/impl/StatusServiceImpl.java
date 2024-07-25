@@ -5,6 +5,7 @@ import com.markdev.ws.mylist.exception.BadRequestException;
 import com.markdev.ws.mylist.exception.NotFoundException;
 import com.markdev.ws.mylist.mapper.StatusMapper;
 import com.markdev.ws.mylist.model.Status;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.repository.StatusRepository;
 import com.markdev.ws.mylist.service.StatusService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,19 @@ public class StatusServiceImpl implements StatusService {
         getStatus(id);
 
         statusRepository.deleteById(id);
+    }
+
+    @Override
+    public Status toggleStatus(Long id) {
+        Status status = getStatus(id);
+
+        if(status.getStatusAtivo().equals("Ativo")) {
+            status.setStatusAtivo("Inativo");
+        } else {
+            status.setStatusAtivo("Ativo");
+        }
+
+        return statusRepository.save(status);
     }
 
 

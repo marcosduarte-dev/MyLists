@@ -5,6 +5,7 @@ import com.markdev.ws.mylist.exception.BadRequestException;
 import com.markdev.ws.mylist.exception.NotFoundException;
 import com.markdev.ws.mylist.mapper.ListasMapper;
 import com.markdev.ws.mylist.model.Listas;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.model.Usuarios;
 import com.markdev.ws.mylist.repository.ListasRepository;
 import com.markdev.ws.mylist.repository.ListasRepository;
@@ -62,6 +63,19 @@ public class ListasServiceImpl implements ListasService {
         getListas(id);
 
         listasRepository.deleteById(id);
+    }
+
+    @Override
+    public Listas toggleStatus(Long id) {
+        Listas lista = getListas(id);
+
+        if(lista.getStatus().equals("Ativo")) {
+            lista.setStatus("Inativo");
+        } else {
+            lista.setStatus("Ativo");
+        }
+
+        return listasRepository.save(lista);
     }
 
 

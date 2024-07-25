@@ -1,10 +1,8 @@
 package com.markdev.ws.mylist.service;
 
 import com.markdev.ws.mylist.dto.ApiConsumidaDTO;
-import com.markdev.ws.mylist.dto.TiposDTO;
 import com.markdev.ws.mylist.model.ApiConsumida;
 import com.markdev.ws.mylist.model.Tipos;
-import io.swagger.annotations.Api;
 
 import java.util.List;
 
@@ -20,4 +18,5 @@ public interface ApiConsumidaService {
 
     void delete(Long id);
 
+    ApiConsumida toggleStatus(Long id);
 }

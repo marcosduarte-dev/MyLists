@@ -1,6 +1,7 @@
 package com.markdev.ws.mylist.controller;
 
 import com.markdev.ws.mylist.dto.UsuariosDTO;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.model.Usuarios;
 import com.markdev.ws.mylist.service.UsuariosService;
 import jakarta.validation.Valid;
@@ -38,10 +39,15 @@ public class UsuariosController {
         return ResponseEntity.status(HttpStatus.OK).body(usuariosService.update(id, dto));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         usuariosService.delete(id);
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Usuarios> toggleStatus(@PathVariable("id") Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(usuariosService.toggleStatus(id));
     }
 }

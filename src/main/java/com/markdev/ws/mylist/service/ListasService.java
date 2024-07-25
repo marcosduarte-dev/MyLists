@@ -20,4 +20,5 @@ public interface ListasService {
 
     void delete(Long id);
 
+    Listas toggleStatus(Long id);
 }

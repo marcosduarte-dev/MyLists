@@ -2,6 +2,7 @@ package com.markdev.ws.mylist.controller;
 
 import com.markdev.ws.mylist.dto.PaisDTO;
 import com.markdev.ws.mylist.model.Pais;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.service.PaisService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +39,15 @@ public class PaisController {
         return ResponseEntity.status(HttpStatus.OK).body(paisService.update(id, dto));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         paisService.delete(id);
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Pais> toggleStatus(@PathVariable("id") Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(paisService.toggleStatus(id));
     }
 }

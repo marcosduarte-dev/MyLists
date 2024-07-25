@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Table(name = "listas")
 public class Listas implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -23,4 +23,6 @@ public class Listas implements Serializable {
     private String titulo;
 
     private String descricao;
+
+    private String status;
 }

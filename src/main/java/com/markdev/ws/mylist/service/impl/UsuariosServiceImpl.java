@@ -4,6 +4,7 @@ import com.markdev.ws.mylist.dto.UsuariosDTO;
 import com.markdev.ws.mylist.exception.BadRequestException;
 import com.markdev.ws.mylist.exception.NotFoundException;
 import com.markdev.ws.mylist.mapper.UsuariosMapper;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.model.Usuarios;
 import com.markdev.ws.mylist.repository.UsuariosRepository;
 import com.markdev.ws.mylist.service.UsuariosService;
@@ -52,6 +53,19 @@ public class UsuariosServiceImpl implements UsuariosService {
         getUsuarios(id);
 
         usuariosRepository.deleteById(id);
+    }
+
+    @Override
+    public Usuarios toggleStatus(Long id) {
+        Usuarios usuario = getUsuarios(id);
+
+        if(usuario.getStatus().equals("Ativo")) {
+            usuario.setStatus("Inativo");
+        } else {
+            usuario.setStatus("Ativo");
+        }
+
+        return usuariosRepository.save(usuario);
     }
 
 

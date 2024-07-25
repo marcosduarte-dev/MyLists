@@ -5,6 +5,7 @@ import com.markdev.ws.mylist.exception.BadRequestException;
 import com.markdev.ws.mylist.exception.NotFoundException;
 import com.markdev.ws.mylist.mapper.PaisMapper;
 import com.markdev.ws.mylist.model.Pais;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.repository.PaisRepository;
 import com.markdev.ws.mylist.service.PaisService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,19 @@ public class PaisServiceImpl implements PaisService {
         getPais(id);
 
         paisRepository.deleteById(id);
+    }
+
+    @Override
+    public Pais toggleStatus(Long id) {
+        Pais pais = getPais(id);
+
+        if(pais.getStatus().equals("Ativo")) {
+            pais.setStatus("Inativo");
+        } else {
+            pais.setStatus("Ativo");
+        }
+
+        return paisRepository.save(pais);
     }
 
 

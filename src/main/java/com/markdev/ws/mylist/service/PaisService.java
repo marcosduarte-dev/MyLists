@@ -4,6 +4,7 @@ import com.markdev.ws.mylist.dto.ListasDTO;
 import com.markdev.ws.mylist.dto.PaisDTO;
 import com.markdev.ws.mylist.model.Listas;
 import com.markdev.ws.mylist.model.Pais;
+import com.markdev.ws.mylist.model.Tipos;
 
 import java.util.List;
 
@@ -19,4 +20,5 @@ public interface PaisService {
 
     void delete(Long id);
 
+    Pais toggleStatus(Long id);
 }

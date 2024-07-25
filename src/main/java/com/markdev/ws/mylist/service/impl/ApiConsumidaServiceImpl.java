@@ -5,6 +5,7 @@ import com.markdev.ws.mylist.exception.BadRequestException;
 import com.markdev.ws.mylist.exception.NotFoundException;
 import com.markdev.ws.mylist.mapper.ApiConsumidaMapper;
 import com.markdev.ws.mylist.model.ApiConsumida;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.repository.ApiConsumidaRepository;
 import com.markdev.ws.mylist.service.ApiConsumidaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,19 @@ public class ApiConsumidaServiceImpl implements ApiConsumidaService {
         getApiConsumida(id);
 
         apiConsumidaRepository.deleteById(id);
+    }
+
+    @Override
+    public ApiConsumida toggleStatus(Long id) {
+        ApiConsumida apiConsumida = getApiConsumida(id);
+
+        if(apiConsumida.getStatus().equals("Ativo")) {
+            apiConsumida.setStatus("Inativo");
+        } else {
+            apiConsumida.setStatus("Ativo");
+        }
+
+        return apiConsumidaRepository.save(apiConsumida);
     }
 
 

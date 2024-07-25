@@ -2,6 +2,7 @@ package com.markdev.ws.mylist.controller;
 
 import com.markdev.ws.mylist.dto.RegistrosDTO;
 import com.markdev.ws.mylist.model.Registros;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.service.RegistrosService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +39,15 @@ public class RegistrosController {
         return ResponseEntity.status(HttpStatus.OK).body(registrosService.update(id, dto));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         registrosService.delete(id);
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Registros> toggleStatus(@PathVariable("id") Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(registrosService.toggleStatus(id));
     }
 }

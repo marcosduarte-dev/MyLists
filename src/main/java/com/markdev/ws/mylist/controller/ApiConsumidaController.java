@@ -2,6 +2,7 @@ package com.markdev.ws.mylist.controller;
 
 import com.markdev.ws.mylist.dto.ApiConsumidaDTO;
 import com.markdev.ws.mylist.model.ApiConsumida;
+import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.service.ApiConsumidaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +39,15 @@ public class ApiConsumidaController {
         return ResponseEntity.status(HttpStatus.OK).body(apiconsumidaService.update(id, dto));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         apiconsumidaService.delete(id);
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ApiConsumida> toggleStatus(@PathVariable("id") Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(apiconsumidaService.toggleStatus(id));
     }
 }
