@@ -37,4 +37,4 @@ mvnw
 mvnw.cmd
 .mvn
 
-db.properties
+src/main/resources/db.properties
