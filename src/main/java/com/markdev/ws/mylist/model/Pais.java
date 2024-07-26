@@ -20,5 +20,5 @@ public class Pais implements Serializable {
 
     private String sigla;
 
-    private String status;
+    private Boolean ativo;
 }

@@ -18,6 +18,5 @@ public class Status implements Serializable {
 
     private String status;
 
-    @Column(name = "status_ativo")
-    private String statusAtivo;
+    private Boolean ativo;
 }

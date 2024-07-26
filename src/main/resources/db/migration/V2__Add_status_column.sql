@@ -1,14 +1,14 @@
-ALTER TABLE usuarios ADD status VARCHAR(10);
+ALTER TABLE usuarios ADD ativo BOOLEAN NOT NULL;
 
-ALTER TABLE listas ADD status VARCHAR(10);
+ALTER TABLE listas ADD ativo BOOLEAN NOT NULL;
 
-ALTER TABLE tipos ADD status VARCHAR(10);
+ALTER TABLE tipos ADD ativo BOOLEAN NOT NULL;
 
-ALTER TABLE apiconsumida ADD status VARCHAR(10);
+ALTER TABLE apiconsumida ADD ativo BOOLEAN NOT NULL;
 
-ALTER TABLE pais ADD status VARCHAR(10);
+ALTER TABLE pais ADD ativo BOOLEAN NOT NULL;
 
-ALTER TABLE status ADD status_ativo VARCHAR(10);
+ALTER TABLE status ADD ativo BOOLEAN NOT NULL;
 
-ALTER TABLE registros ADD status VARCHAR(10);
+ALTER TABLE registros ADD ativo BOOLEAN NOT NULL;
 

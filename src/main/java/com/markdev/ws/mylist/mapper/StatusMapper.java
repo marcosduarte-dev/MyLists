@@ -1,8 +1,6 @@
 package com.markdev.ws.mylist.mapper;
 
-import com.markdev.ws.mylist.dto.PaisDTO;
 import com.markdev.ws.mylist.dto.StatusDTO;
-import com.markdev.ws.mylist.model.Pais;
 import com.markdev.ws.mylist.model.Status;
 
 public class StatusMapper {
@@ -11,6 +9,7 @@ public class StatusMapper {
         return Status.builder()
                 .id(dto.getId())
                 .status(dto.getStatus())
+                .ativo(dto.getAtivo())
                 .build();
     }
 

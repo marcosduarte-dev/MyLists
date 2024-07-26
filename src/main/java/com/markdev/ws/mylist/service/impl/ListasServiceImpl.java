@@ -46,6 +46,8 @@ public class ListasServiceImpl implements ListasService {
         }
 
         Usuarios usuario = getUsuarios(dto);
+        
+        dto.setAtivo(true);
 
         return listasRepository.save(ListasMapper.fromDtoToEntity(dto,usuario));
     }
@@ -69,11 +71,7 @@ public class ListasServiceImpl implements ListasService {
     public Listas toggleStatus(Long id) {
         Listas lista = getListas(id);
 
-        if(lista.getStatus().equals("Ativo")) {
-            lista.setStatus("Inativo");
-        } else {
-            lista.setStatus("Ativo");
-        }
+        lista.setAtivo(!lista.getAtivo());
 
         return listasRepository.save(lista);
     }

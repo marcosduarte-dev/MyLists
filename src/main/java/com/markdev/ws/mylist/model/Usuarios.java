@@ -22,5 +22,5 @@ public class Usuarios implements Serializable {
 
     private String senha;
 
-    private String status;
+    private Boolean ativo;
 }

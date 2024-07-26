@@ -27,6 +27,7 @@ public class RegistrosMapper {
                 .comentarios(dto.getComentarios())
                 .dataComeco(dto.getDataComeco())
                 .dataFinal(dto.getDataFinal())
+                .ativo(dto.getAtivo())
                 .build();
     }
 

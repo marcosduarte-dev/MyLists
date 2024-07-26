@@ -37,6 +37,8 @@ public class ApiConsumidaServiceImpl implements ApiConsumidaService {
         if(Objects.nonNull(dto.getId())) {
             throw new BadRequestException("ID deve ser nulo");
         }
+        
+        dto.setAtivo(true);
 
         return apiConsumidaRepository.save(ApiConsumidaMapper.fromDtoToEntity(dto));
     }
@@ -59,11 +61,7 @@ public class ApiConsumidaServiceImpl implements ApiConsumidaService {
     public ApiConsumida toggleStatus(Long id) {
         ApiConsumida apiConsumida = getApiConsumida(id);
 
-        if(apiConsumida.getStatus().equals("Ativo")) {
-            apiConsumida.setStatus("Inativo");
-        } else {
-            apiConsumida.setStatus("Ativo");
-        }
+        apiConsumida.setAtivo(!apiConsumida.getAtivo());
 
         return apiConsumidaRepository.save(apiConsumida);
     }

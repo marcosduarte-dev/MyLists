@@ -17,6 +17,7 @@ public class PaisDTO {
     @NotBlank(message = "não pode ser nulo")
     private String nome;
 
-    @NotBlank(message = "não pode ser nulo")
     private String sigla;
+    
+    private Boolean ativo;
 }

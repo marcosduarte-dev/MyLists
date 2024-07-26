@@ -64,6 +64,5 @@ public class Registros implements Serializable {
     @Column(name = "data_registro")
     private LocalDate dataRegistro;
 
-    @Column(name = "status")
-    private String status_ativo;
+    private Boolean ativo;
 }

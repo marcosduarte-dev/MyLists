@@ -1,6 +1,5 @@
 package com.markdev.ws.mylist.dto;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,4 +16,6 @@ public class StatusDTO {
 
     @NotBlank(message = "não pode ser nulo")
     private String status;
+    
+    private Boolean ativo;
 }

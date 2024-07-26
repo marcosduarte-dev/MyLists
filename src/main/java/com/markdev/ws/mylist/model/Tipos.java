@@ -16,5 +16,5 @@ public class Tipos {
 
     private String tipo;
 
-    private String status = "Ativo";
+    private Boolean ativo;
 }

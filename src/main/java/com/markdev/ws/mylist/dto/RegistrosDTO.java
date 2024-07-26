@@ -1,6 +1,5 @@
 package com.markdev.ws.mylist.dto;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -53,4 +52,6 @@ public class RegistrosDTO {
     private LocalDate dataComeco;
 
     private LocalDate dataFinal;
+    
+    private Boolean ativo;
 }

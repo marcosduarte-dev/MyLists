@@ -22,4 +22,6 @@ public class ListasDTO {
     private String titulo;
 
     private String descricao;
+    
+    private Boolean ativo;
 }

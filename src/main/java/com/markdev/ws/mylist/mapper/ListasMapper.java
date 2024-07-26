@@ -1,8 +1,6 @@
 package com.markdev.ws.mylist.mapper;
 
-import com.markdev.ws.mylist.dto.ApiConsumidaDTO;
 import com.markdev.ws.mylist.dto.ListasDTO;
-import com.markdev.ws.mylist.model.ApiConsumida;
 import com.markdev.ws.mylist.model.Listas;
 import com.markdev.ws.mylist.model.Usuarios;
 
@@ -14,6 +12,7 @@ public class ListasMapper {
                 .usuario(usuario)
                 .titulo(dto.getTitulo())
                 .descricao(dto.getDescricao())
+                .ativo(dto.getAtivo())
                 .build();
     }
 

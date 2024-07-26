@@ -22,4 +22,6 @@ public class UsuariosDTO {
     private String email;
 
     private String senha;
+    
+    private Boolean ativo;
 }

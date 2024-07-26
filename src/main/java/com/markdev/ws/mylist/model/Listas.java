@@ -24,5 +24,5 @@ public class Listas implements Serializable {
 
     private String descricao;
 
-    private String status;
+    private Boolean ativo;
 }

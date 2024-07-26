@@ -18,5 +18,5 @@ public class ApiConsumida {
 
     private String url;
 
-    private String status;
+    private Boolean ativo;
 }

@@ -1,8 +1,6 @@
 package com.markdev.ws.mylist.mapper;
 
-import com.markdev.ws.mylist.dto.StatusDTO;
 import com.markdev.ws.mylist.dto.UsuariosDTO;
-import com.markdev.ws.mylist.model.Status;
 import com.markdev.ws.mylist.model.Usuarios;
 
 public class UsuariosMapper {
@@ -13,6 +11,7 @@ public class UsuariosMapper {
                 .nome(dto.getNome())
                 .email(dto.getEmail())
                 .senha(dto.getSenha())
+                .ativo(dto.getAtivo())
                 .build();
     }
 

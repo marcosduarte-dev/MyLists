@@ -46,6 +46,8 @@ public class RegistrosServiceImpl implements RegistrosService {
         if(Objects.nonNull(dto.getId())) {
             throw new BadRequestException("ID deve ser nulo");
         }
+        
+        dto.setAtivo(true);
 
         return registrosRepository.save(RegistrosMapper.fromDtoToEntity(
                 dto,
@@ -82,11 +84,7 @@ public class RegistrosServiceImpl implements RegistrosService {
     public Registros toggleStatus(Long id) {
         Registros registros = getRegistros(id);
 
-        if(registros.getStatus_ativo().equals("Ativo")) {
-            registros.setStatus_ativo("Inativo");
-        } else {
-            registros.setStatus_ativo("Ativo");
-        }
+        registros.setAtivo(!registros.getAtivo());
 
         return registrosRepository.save(registros);
     }

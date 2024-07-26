@@ -5,7 +5,6 @@ import com.markdev.ws.mylist.exception.BadRequestException;
 import com.markdev.ws.mylist.exception.NotFoundException;
 import com.markdev.ws.mylist.mapper.PaisMapper;
 import com.markdev.ws.mylist.model.Pais;
-import com.markdev.ws.mylist.model.Tipos;
 import com.markdev.ws.mylist.repository.PaisRepository;
 import com.markdev.ws.mylist.service.PaisService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +36,8 @@ public class PaisServiceImpl implements PaisService {
         if(Objects.nonNull(dto.getId())) {
             throw new BadRequestException("ID deve ser nulo");
         }
+        
+        dto.setAtivo(true);
 
         return paisRepository.save(PaisMapper.fromDtoToEntity(dto));
     }
@@ -59,11 +60,7 @@ public class PaisServiceImpl implements PaisService {
     public Pais toggleStatus(Long id) {
         Pais pais = getPais(id);
 
-        if(pais.getStatus().equals("Ativo")) {
-            pais.setStatus("Inativo");
-        } else {
-            pais.setStatus("Ativo");
-        }
+        pais.setAtivo(!pais.getAtivo());
 
         return paisRepository.save(pais);
     }

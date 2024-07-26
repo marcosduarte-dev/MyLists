@@ -18,4 +18,6 @@ public class ApiConsumidaDTO {
     private String api;
 
     private String url;
+    
+    private Boolean ativo;
 }
