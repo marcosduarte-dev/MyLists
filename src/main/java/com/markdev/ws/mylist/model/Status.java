@@ -19,4 +19,6 @@ public class Status implements Serializable {
     private String status;
 
     private Boolean ativo;
+    
+    private String color;
 }

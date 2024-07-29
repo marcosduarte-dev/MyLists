@@ -10,6 +10,7 @@ public class TiposMapper {
                 .id(dto.getId())
                 .tipo(dto.getTipo())
                 .ativo(dto.getAtivo())
+                .color(dto.getColor())
                 .build();
     }
 

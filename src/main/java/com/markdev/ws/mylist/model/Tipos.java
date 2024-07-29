@@ -17,4 +17,6 @@ public class Tipos {
     private String tipo;
 
     private Boolean ativo;
+    
+    private String color;
 }

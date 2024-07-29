@@ -18,4 +18,7 @@ public class StatusDTO {
     private String status;
     
     private Boolean ativo;
+    
+    @NotBlank(message = "não pode ser nulo ou vazio")
+    private String color;
 }

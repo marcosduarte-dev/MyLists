@@ -10,6 +10,7 @@ public class StatusMapper {
                 .id(dto.getId())
                 .status(dto.getStatus())
                 .ativo(dto.getAtivo())
+                .color(dto.getColor())
                 .build();
     }
 

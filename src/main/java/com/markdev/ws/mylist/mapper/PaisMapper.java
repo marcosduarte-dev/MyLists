@@ -11,6 +11,7 @@ public class PaisMapper {
                 .nome(dto.getNome())
                 .sigla(dto.getSigla())
                 .ativo(dto.getAtivo())
+                .color(dto.getColor())
                 .build();
     }
 

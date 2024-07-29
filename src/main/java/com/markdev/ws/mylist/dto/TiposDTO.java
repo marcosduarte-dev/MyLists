@@ -18,4 +18,7 @@ public class TiposDTO {
     private String tipo;
 
     private Boolean ativo;
+    
+    @NotBlank(message = "não pode ser nulo ou vazio")
+    private String color;
 }

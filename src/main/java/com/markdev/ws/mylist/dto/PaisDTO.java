@@ -20,4 +20,7 @@ public class PaisDTO {
     private String sigla;
     
     private Boolean ativo;
+    
+    @NotBlank(message = "não pode ser nulo ou vazio")
+    private String color;
 }
