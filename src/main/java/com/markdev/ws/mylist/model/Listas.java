@@ -5,6 +5,8 @@ import lombok.*;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Data
 @Builder
@@ -16,8 +18,9 @@ public class Listas implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY )
     @JoinColumn(name = "usuario_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Usuarios usuario;
 
     private String titulo;

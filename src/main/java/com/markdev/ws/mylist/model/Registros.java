@@ -6,6 +6,8 @@ import lombok.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Data
 @Builder
@@ -19,6 +21,7 @@ public class Registros implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lista_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Listas lista;
 
     private String poster;
@@ -29,18 +32,22 @@ public class Registros implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Tipos tipo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "apiconsumida_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private ApiConsumida apiConsumida;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pais_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Pais pais;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "status_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Status status;
 
     private Long temporadas;
